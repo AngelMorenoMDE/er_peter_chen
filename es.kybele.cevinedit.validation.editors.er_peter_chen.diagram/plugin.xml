@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="er_peter_chen_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="er_peter_chen_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="er_peter_chen.diagram.part.Er_peter_chenDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/Er_peter_chenDiagramFile.gif"
+         extensions="er_peter_chen_diagram"
+         default="true"
+         class="er_peter_chen.diagram.part.Er_peter_chenDiagramEditor"
+         matchingStrategy="er_peter_chen.diagram.part.Er_peter_chenMatchingStrategy"
+         contributorClass="er_peter_chen.diagram.part.Er_peter_chenDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="er_peter_chen.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/Er_peter_chenDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="er_peter_chen.diagram.part.Er_peter_chenCreationWizard"
+  	     id="er_peter_chen.diagram.part.Er_peter_chenCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.InitDiagram"
+            nameFilter="*.er_peter_chen"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="er_peter_chen.diagram.part.Er_peter_chenInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="Er_peter_chenPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="er_peter_chen.diagram.part.Er_peter_chenDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="Er_peter_chenPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="er_peter_chen.diagram.part.Er_peter_chenDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="Er_peter_chenRender">
+         <Priority name="Lowest"/>
+         <ViewId id="er_peter_chen.diagram.part.Er_peter_chenDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="er_peter_chen.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.general"
+            name="%prefpage.es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.general"
+            class="er_peter_chen.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.appearance"
+            name="%prefpage.es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.appearance"
+            category="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.general"
+            class="er_peter_chen.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.connections"
+            name="%prefpage.es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.connections"
+            category="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.general"
+            class="er_peter_chen.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.printing"
+            name="%prefpage.es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.printing"
+            category="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.general"
+            class="er_peter_chen.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.rulersAndGrid"
+            name="%prefpage.es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.rulersAndGrid"
+            category="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.general"
+            class="er_peter_chen.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram"
+            labelProvider="er_peter_chen.diagram.sheet.Er_peter_chenSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="er_peter_chen.diagram.sheet.Er_peter_chenPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="er_peter_chen.diagram.providers.Er_peter_chenViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Er_peter_chen"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="er_peter_chen.diagram.providers.Er_peter_chenEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="Er_peter_chen"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002,4003,4004"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5001,5002,5003,5004,5005,5006,5007,5008,5009,5010"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value=""/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="er_peter_chen.diagram.providers.assistants.Er_peter_chenModelingAssistantProviderOfERPCDiagramEditPart">
+         <Priority name="Lowest"/>
+         <object class="er_peter_chen.diagram.edit.parts.ERPCDiagramEditPart" id="ERPCDiagram_1000"/>
+         <context elements="ERPCDiagram_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="er_peter_chen.diagram.providers.assistants.Er_peter_chenModelingAssistantProviderOfERPCDerivedAttributeEditPart">
+         <Priority name="Lowest"/>
+         <object class="er_peter_chen.diagram.edit.parts.ERPCDerivedAttributeEditPart" id="ERPCDerivedAttribute_2001"/>
+         <context elements="ERPCDerivedAttribute_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="er_peter_chen.diagram.providers.assistants.Er_peter_chenModelingAssistantProviderOfERPCWeakEntityEditPart">
+         <Priority name="Lowest"/>
+         <object class="er_peter_chen.diagram.edit.parts.ERPCWeakEntityEditPart" id="ERPCWeakEntity_2002"/>
+         <context elements="ERPCWeakEntity_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="er_peter_chen.diagram.providers.assistants.Er_peter_chenModelingAssistantProviderOfERPCRegularEntityEditPart">
+         <Priority name="Lowest"/>
+         <object class="er_peter_chen.diagram.edit.parts.ERPCRegularEntityEditPart" id="ERPCRegularEntity_2003"/>
+         <context elements="ERPCRegularEntity_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="er_peter_chen.diagram.providers.assistants.Er_peter_chenModelingAssistantProviderOfERPCWeakKeyAttributeEditPart">
+         <Priority name="Lowest"/>
+         <object class="er_peter_chen.diagram.edit.parts.ERPCWeakKeyAttributeEditPart" id="ERPCWeakKeyAttribute_2004"/>
+         <context elements="ERPCWeakKeyAttribute_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="er_peter_chen.diagram.providers.assistants.Er_peter_chenModelingAssistantProviderOfERPCMultiValuedAttributeEditPart">
+         <Priority name="Lowest"/>
+         <object class="er_peter_chen.diagram.edit.parts.ERPCMultiValuedAttributeEditPart" id="ERPCMultiValuedAttribute_2005"/>
+         <context elements="ERPCMultiValuedAttribute_2005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="er_peter_chen.diagram.providers.assistants.Er_peter_chenModelingAssistantProviderOfERPCRegularRelationshipEditPart">
+         <Priority name="Lowest"/>
+         <object class="er_peter_chen.diagram.edit.parts.ERPCRegularRelationshipEditPart" id="ERPCRegularRelationship_2006"/>
+         <context elements="ERPCRegularRelationship_2006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="er_peter_chen.diagram.providers.assistants.Er_peter_chenModelingAssistantProviderOfERPCPrimaryKeyAttributeEditPart">
+         <Priority name="Lowest"/>
+         <object class="er_peter_chen.diagram.edit.parts.ERPCPrimaryKeyAttributeEditPart" id="ERPCPrimaryKeyAttribute_2007"/>
+         <context elements="ERPCPrimaryKeyAttribute_2007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="er_peter_chen.diagram.providers.assistants.Er_peter_chenModelingAssistantProviderOfERPCIdentifyingRelationshipEditPart">
+         <Priority name="Lowest"/>
+         <object class="er_peter_chen.diagram.edit.parts.ERPCIdentifyingRelationshipEditPart" id="ERPCIdentifyingRelationship_2008"/>
+         <context elements="ERPCIdentifyingRelationship_2008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="er_peter_chen.diagram.providers.assistants.Er_peter_chenModelingAssistantProviderOfERPCRegularAttributeEditPart">
+         <Priority name="Lowest"/>
+         <object class="er_peter_chen.diagram.edit.parts.ERPCRegularAttributeEditPart" id="ERPCRegularAttribute_2009"/>
+         <context elements="ERPCRegularAttribute_2009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="er_peter_chen.diagram.providers.assistants.Er_peter_chenModelingAssistantProviderOfERPCCompositeAttributeEditPart">
+         <Priority name="Lowest"/>
+         <object class="er_peter_chen.diagram.edit.parts.ERPCCompositeAttributeEditPart" id="ERPCCompositeAttribute_2010"/>
+         <context elements="ERPCCompositeAttribute_2010"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="er_peter_chen.diagram.providers.Er_peter_chenIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="er_peter_chen.diagram.providers.Er_peter_chenParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCDiagram_1000"
+               name="%metatype.name.ERPCDiagram_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCDiagram"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCDiagramEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCDerivedAttribute_2001"
+               name="%metatype.name.ERPCDerivedAttribute_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCDerivedAttribute"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCDerivedAttributeEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCWeakEntity_2002"
+               name="%metatype.name.ERPCWeakEntity_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCWeakEntity"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCWeakEntityEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCRegularEntity_2003"
+               name="%metatype.name.ERPCRegularEntity_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCRegularEntity"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCRegularEntityEditHelper">
+            <param name="semanticHint" value="2003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCWeakKeyAttribute_2004"
+               name="%metatype.name.ERPCWeakKeyAttribute_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCWeakKeyAttribute"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCWeakKeyAttributeEditHelper">
+            <param name="semanticHint" value="2004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCMultiValuedAttribute_2005"
+               name="%metatype.name.ERPCMultiValuedAttribute_2005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCMultiValuedAttribute"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCMultiValuedAttributeEditHelper">
+            <param name="semanticHint" value="2005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCRegularRelationship_2006"
+               name="%metatype.name.ERPCRegularRelationship_2006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCRegularRelationship"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCRegularRelationshipEditHelper">
+            <param name="semanticHint" value="2006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCPrimaryKeyAttribute_2007"
+               name="%metatype.name.ERPCPrimaryKeyAttribute_2007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCPrimaryKeyAttribute"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCPrimaryKeyAttributeEditHelper">
+            <param name="semanticHint" value="2007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCIdentifyingRelationship_2008"
+               name="%metatype.name.ERPCIdentifyingRelationship_2008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCIdentifyingRelationship"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCIdentifyingRelationshipEditHelper">
+            <param name="semanticHint" value="2008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCRegularAttribute_2009"
+               name="%metatype.name.ERPCRegularAttribute_2009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCRegularAttribute"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCRegularAttributeEditHelper">
+            <param name="semanticHint" value="2009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCCompositeAttribute_2010"
+               name="%metatype.name.ERPCCompositeAttribute_2010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCCompositeAttribute"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCCompositeAttributeEditHelper">
+            <param name="semanticHint" value="2010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCRelationshipAttributeLink_4001"
+               name="%metatype.name.ERPCRelationshipAttributeLink_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCRelationshipAttributeLink"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCRelationshipAttributeLinkEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCEntityRelationshipLink_4002"
+               name="%metatype.name.ERPCEntityRelationshipLink_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCEntityRelationshipLink"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCEntityRelationshipLinkEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <metamodelType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCEntityAttributeLink_4003"
+               name="%metatype.name.ERPCEntityAttributeLink_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ERPCEntityAttributeLink"
+               edithelper="er_peter_chen.diagram.edit.helpers.ERPCEntityAttributeLinkEditHelper">
+            <param name="semanticHint" value="4003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.kybele.es/gmf/er_peter_chen">
+         <specializationType
+               id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCCompositeAttributeComposedAttributes_4004"
+               name="%metatype.name.ERPCCompositeAttributeComposedAttributes_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4004"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.TypeContext">
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCDiagram_1000"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCDerivedAttribute_2001"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCWeakEntity_2002"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCRegularEntity_2003"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCWeakKeyAttribute_2004"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCMultiValuedAttribute_2005"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCRegularRelationship_2006"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCPrimaryKeyAttribute_2007"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCIdentifyingRelationship_2008"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCRegularAttribute_2009"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCCompositeAttribute_2010"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCRelationshipAttributeLink_4001"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCEntityRelationshipLink_4002"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCEntityAttributeLink_4003"/>
+         <elementType ref="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.ERPCCompositeAttributeComposedAttributes_4004"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   
+	   
+      
+	      <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="er_peter_chen.diagram.part.Er_peter_chenDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="er_peter_chen.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="er_peter_chen.diagram.updateDiagram"
+         contextId="er_peter_chen.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="er_peter_chen.diagram.part.Er_peter_chenDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="er_peter_chen.diagram.edit.parts.ERPCDiagramEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="er_peter_chen.diagram.part.Er_peter_chenDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="er_peter_chen.diagram.part.Er_peter_chenDiagramEditorID"
+         defaultHandler="er_peter_chen.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

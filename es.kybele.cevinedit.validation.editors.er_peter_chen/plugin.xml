@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated er_peter_chen -->
+      <package
+            uri="http://www.kybele.es/gmf/er_peter_chen"
+            class="er_peter_chen.Er_peter_chenPackage"
+            genModel="model/er_peter_chen.genmodel"/>
+   </extension>
+
+</plugin>

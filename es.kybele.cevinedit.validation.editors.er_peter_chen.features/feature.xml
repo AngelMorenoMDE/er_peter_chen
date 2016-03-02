@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="es.kybele.cevinedit.validation.editors.er_peter_chen.features"
+      label="E/R Peter Chen - GMF Diagrammer"
+      version="0.0.1.a"
+      provider-name="Grupo de Investigación Kybele">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="es.kybele.cevinedit.validation.editors.er_peter_chen"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="es.kybele.cevinedit.validation.editors.er_peter_chen.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="es.kybele.cevinedit.validation.editors.er_peter_chen.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="es.kybele.cevinedit.validation.editors.er_peter_chen.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="es.kybele.cevinedit.validation.editors.er_peter_chen.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

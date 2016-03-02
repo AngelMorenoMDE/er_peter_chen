@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/es.kybele.cevinedit.validation.editors.er_peter_chen/src"
+    modelPluginID="es.kybele.cevinedit.validation.editors.er_peter_chen" modelName="Er_peter_chen"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>er_peter_chen.ecore</foreignModel>
+  <genPackages prefix="Er_peter_chen" disposableProviderFactory="true" ecorePackage="er_peter_chen.ecore#/">
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference er_peter_chen.ecore#//ERPCDiagram/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference er_peter_chen.ecore#//ERPCDiagram/relationships"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference er_peter_chen.ecore#//ERPCDiagram/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference er_peter_chen.ecore#//ERPCDiagram/entities"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="er_peter_chen.ecore#//ERPCLink"/>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCEntityRelationshipLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference er_peter_chen.ecore#//ERPCEntityRelationshipLink/relationship"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference er_peter_chen.ecore#//ERPCEntityRelationshipLink/entity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute er_peter_chen.ecore#//ERPCEntityRelationshipLink/cardinality"/>
+    </genClasses>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCEntityAttributeLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference er_peter_chen.ecore#//ERPCEntityAttributeLink/entity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference er_peter_chen.ecore#//ERPCEntityAttributeLink/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCRelationshipAttributeLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference er_peter_chen.ecore#//ERPCRelationshipAttributeLink/relationship"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference er_peter_chen.ecore#//ERPCRelationshipAttributeLink/attribute"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="er_peter_chen.ecore#//ERPCRelationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute er_peter_chen.ecore#//ERPCRelationship/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute er_peter_chen.ecore#//ERPCRelationship/cardinality"/>
+    </genClasses>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCRegularRelationship"/>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCIdentifyingRelationship"/>
+    <genClasses image="false" ecoreClass="er_peter_chen.ecore#//ERPCAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute er_peter_chen.ecore#//ERPCAttribute/name"/>
+    </genClasses>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCRegularAttribute"/>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCCompositeAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference er_peter_chen.ecore#//ERPCCompositeAttribute/composedAttributes"/>
+    </genClasses>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCPrimaryKeyAttribute"/>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCWeakKeyAttribute"/>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCDerivedAttribute"/>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCMultiValuedAttribute"/>
+    <genClasses image="false" ecoreClass="er_peter_chen.ecore#//ERPCEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute er_peter_chen.ecore#//ERPCEntity/name"/>
+    </genClasses>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCRegularEntity"/>
+    <genClasses ecoreClass="er_peter_chen.ecore#//ERPCWeakEntity"/>
+  </genPackages>
+</genmodel:GenModel>
